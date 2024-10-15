@@ -1,7 +1,7 @@
 with 
     source_products as (
         select
-            cast(productid as int) as product_id
+            cast(productid as int) as product_sk
             , cast(name as string) as product_name
             , cast(productnumber as string) as product_number
             , cast(makeflag as boolean) as make_flag
@@ -19,7 +19,7 @@ with
             , cast(productline as string) as product_line
             , cast(class as string) as class
             , cast(style as string) as style
-            , cast(productsubcategoryid as int) as product_subcategory_id
+            , cast(productsubcategoryid as int) as product_subcategory_fk
             , cast(productmodelid as int) as product_model_id
             , cast(sellstartdate as string) as sell_start_date
             , cast(sellenddate as string) as sell_end_ddate
@@ -32,4 +32,4 @@ with
    
 select * 
 from source_products
-order by product_id
+order by product_sk
